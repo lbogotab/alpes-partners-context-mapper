@@ -1,0 +1,55 @@
+ContextMap AlpesPartnersContextMap {
+    type = SYSTEM_LANDSCAPE
+    state = AS_IS
+
+    /* Add bounded contexts to this context map: */
+    contains DescubrimientoYReclutamientoSubdomain
+    contains ContratosYOnboardingSubdomain
+    contains PlataformaGestionAlianzasSubdomain
+    contains TrackingYAtribucionSubdomain
+    contains AnalisisYOptimizacionSubdomain
+    contains PagoYCumplimientoSubdomain
+}
+
+// Estos bounded context se definen solo con el objetio de que la imagen generada muestre los subdominios. 
+BoundedContext DescubrimientoYReclutamientoSubdomain implements DescubrimientoYReclutamientoSubdomain
+BoundedContext ContratosYOnboardingSubdomain implements ContratosYOnboardingSubdomain
+BoundedContext PlataformaGestionAlianzasSubdomain implements PlataformaGestionAlianzasSubdomain
+BoundedContext TrackingYAtribucionSubdomain implements TrackingYAtribucionSubdomain
+BoundedContext AnalisisYOptimizacionSubdomain implements AnalisisYOptimizacionSubdomain
+BoundedContext PagoYCumplimientoSubdomain implements PagoYCumplimientoSubdomain
+
+/* Domain & Subdomain Definitions */
+Domain GestionRelacionesAsociacionEstrategicaDomain {
+  domainVisionStatement = "Gestión de Relaciones de Asociación Estratégica."
+
+  Subdomain DescubrimientoYReclutamientoSubdomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Identificar y reclutar partners vía marketplace y filtros."
+  }
+
+  Subdomain ContratosYOnboardingSubdomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Onboarding y contratos estandarizados de partners."
+  }
+  
+  Subdomain PlataformaGestionAlianzasSubdomain {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Gestionar alianzas B2B, acuerdos e hitos."
+  }
+  
+  Subdomain TrackingYAtribucionSubdomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Captura de eventos y cálculo de atribución."
+  }
+  
+  Subdomain AnalisisYOptimizacionSubdomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Insights y optimización de performance."
+  }
+  
+  Subdomain PagoYCumplimientoSubdomain {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Pagos y controles de cumplimiento normativo."
+  }
+}

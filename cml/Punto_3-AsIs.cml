@@ -1,0 +1,60 @@
+ContextMap AlpesPartnersContextMap {
+  type = SYSTEM_LANDSCAPE
+  state = AS_IS
+
+  // Contained bounded contexts
+  contains PlataformaDeGestionDeAlianzas
+
+  // Relaciones estratégicas
+
+}
+
+BoundedContext PlataformaDeGestionDeAlianzas implements AlianzasCoreDomain, PagoDomain, ContratosDomain, AtribucionesDomain, AnaliticaDomain, TrackingDomain, CumplimientoDomain, ReclutamientoDomain, OnboardingDomain
+
+
+Domain AlpesPartnersDomain {
+  Subdomain AlianzasCoreDomain {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Gestiona alianzas estratégicas, reglas de partnership y coordinación entre servicios clave del negocio."
+  }
+
+  Subdomain PagoDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Calcula y ejecuta pagos basados en eventos y condiciones contractuales previamente atribuidas."
+  }
+
+  Subdomain ContratosDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Administra las condiciones contractuales con clientes que usan la plataforma de alianzas."
+  }
+
+  Subdomain AtribucionesDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Asigna eventos de conversión a socios con base en reglas y datos capturados por el tracking."
+  }
+
+  Subdomain AnaliticaDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Optimiza el rendimiento del sistema a través de métricas, reportes y análisis de ROI."
+  }
+
+  Subdomain TrackingDomain {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Captura eventos técnicos desde distintas fuentes y dispositivos para procesarlos en otros contextos."
+  }
+
+  Subdomain CumplimientoDomain {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Verifica aspectos regulatorios, legales y antifraude relacionados con la operación del sistema."
+  }
+
+  Subdomain ReclutamientoDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Facilita el descubrimiento, filtrado y selección de nuevos socios potenciales."
+  }
+
+  Subdomain OnboardingDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Activa y configura nuevos socios validando sus datos y conectándolos con el ecosistema."
+  }
+}
