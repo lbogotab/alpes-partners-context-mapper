@@ -1,0 +1,88 @@
+ContextMap AlpesPartnersContextMap {
+  type = SYSTEM_LANDSCAPE
+  state = TO_BE
+
+  contains GestionRelacionesContext // DOMINIO
+  contains PlataformaDeGestionDeAlianzas
+  contains Tracking
+  contains Atribuciones
+  contains Pago
+  contains Onboarding
+  contains DescubrimientoYReclutamiento
+  contains ContratosClientes
+  contains Cumplimiento
+  contains AnalisisYOptimizacion
+
+  GestionRelacionesContext -> PlataformaDeGestionDeAlianzas
+  GestionRelacionesContext -> Atribuciones
+  GestionRelacionesContext -> Pago
+  GestionRelacionesContext -> Onboarding
+  GestionRelacionesContext -> DescubrimientoYReclutamiento
+  GestionRelacionesContext -> AnalisisYOptimizacion
+  GestionRelacionesContext -> Cumplimiento
+  GestionRelacionesContext -> ContratosClientes
+  GestionRelacionesContext -> Tracking
+}
+
+BoundedContext GestionRelacionesContext implements GestionRelacionesCoreDomain
+BoundedContext PlataformaDeGestionDeAlianzas implements PlataformaAlianzasDomain
+BoundedContext Tracking implements TrackingDomain
+BoundedContext Atribuciones implements AtribucionesDomain
+BoundedContext Pago implements PagoDomain
+BoundedContext Onboarding implements OnboardingDomain
+BoundedContext DescubrimientoYReclutamiento implements ReclutamientoDomain
+BoundedContext ContratosClientes implements ContratosClientesDomain
+BoundedContext Cumplimiento implements CumplimientoDomain
+BoundedContext AnalisisYOptimizacion implements AnalisisDomain
+
+Domain AlpesPartnersDomain {
+  Subdomain GestionRelacionesCoreDomain {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Gestiona todo el ciclo de vida de asociaciones estratégicas entre marcas y terceros."
+  }
+
+  Subdomain PlataformaAlianzasDomain {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Implementa contratos, reglas de colaboración, y funcionalidades compartidas para gestionar partnerships."
+  }
+
+  Subdomain TrackingDomain {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Captura y transmite eventos técnicos provenientes de distintas fuentes para su posterior procesamiento."
+  }
+
+  Subdomain AtribucionesDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Aplica reglas para asignar conversiones a socios, evaluando condiciones y generando outputs para pagos y métricas."
+  }
+
+  Subdomain PagoDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Calcula y ejecuta pagos basados en reglas de negocio y contratos."
+  }
+
+  Subdomain OnboardingDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Administra la activación de nuevos socios, validaciones y configuración inicial."
+  }
+
+  Subdomain ReclutamientoDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Facilita el descubrimiento y selección de nuevos socios por parte de las marcas."
+  }
+
+  Subdomain ContratosClientesDomain {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Gestiona contratos formales entre Alpes Partners y sus clientes comerciales."
+  }
+
+  Subdomain CumplimientoDomain {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Verifica cumplimiento legal y regulatorio de los procesos del sistema."
+  }
+
+  Subdomain AnalisisDomain {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Mide y optimiza la eficiencia operativa del sistema para garantizar escalabilidad y rendimiento."
+  }
+}

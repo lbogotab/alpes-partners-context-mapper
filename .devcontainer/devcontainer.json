@@ -1,0 +1,21 @@
+{
+  "name": "Context Mapper Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "echo DevContainer listo",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "contextmapper.context-mapper-vscode-extension",
+        "jebbs.plantuml",
+        "asciidoctor.asciidoctor-vscode",
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "contextmapper.exportDiagrams.outputFolder": "diagrams",
+        "plantuml.exportOutDir": "diagrams/plantuml"
+      }
+    }
+  }
+}
