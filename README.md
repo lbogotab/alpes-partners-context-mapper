@@ -9,13 +9,12 @@ Este proyecto contiene la definición de múltiples mapas de contexto para un ca
 
 ## 👥 Integrantes
 
-| Nombre y Apellido    | Usuario GitHub      | Correo                      | Código Uniandes |
-|----------------------|---------------------|-----------------------------|-----------------|
-| Leiner Barrios       | leinerbarrios       | lj.barrios@uniandes.edu.co | 202322761       |
-| Jhorman Galindo      | galindodev          | j.galindop@uniandes.edu.co | 202413944       |
-| Alejandro Bogotá     | lbogotab            | l.bogotab@uniandes.edu.co  | 202412270       |
-| Jaime Gallo          | salchichongallo     | j.gallom@uniandes.edu.co   | 202412276       |
-
+| Nombre y Apellido    | Usuario GitHub      | Correo                      |
+|----------------------|---------------------|-----------------------------|
+| Leiner Barrios       | leinerbarrios       | lj.barrios@uniandes.edu.co |
+| Jhorman Galindo      | galindodev          | j.galindop@uniandes.edu.co |
+| Alejandro Bogotá     | lbogotab            | l.bogotab@uniandes.edu.co  |
+| Jaime Gallo          | salchichongallo     | j.gallom@uniandes.edu.co   |
 
 
 ## 📦 Estructura del Proyecto
@@ -75,6 +74,8 @@ Una vez dentro del Dev Container, para cada archivo `.cml`:
 | `punto_1-AsIs.cml`           | Mapa de contexto actual (AS-IS) inicial |
 | `Punto_3-AsIs.cml`           | Versión avanzada del modelo actual      |
 | `Punto_3-ToBe.cml`           | Modelo objetivo propuesto (TO-BE)       |
+| [Lenguaje Ubicuo AS-IS](./P2_AS-IS.jpg) | Lenguaje Ubicuo AS-IS |
+| [Lenguaje Ubicuo TO-BE](./P2_TO-BE.jpg) | Lenguaje Ubicuo TO-BE |
 
 ---
 
